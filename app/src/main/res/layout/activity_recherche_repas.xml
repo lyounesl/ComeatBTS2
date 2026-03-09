@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    tools:context=".RechercheRepasActivity">
+
+    <Button
+        android:id="@+id/boutonRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:layout_margin="16dp"
+        android:text="@string/btn_retour"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélection de la spécialité culinaire et de la date"
+        android:layout_marginBottom="16dp"
+        />
+
+    <Spinner
+        android:id="@+id/spiRepas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        />
+
+    <TextView
+        android:id="@+id/affDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_margin="16dp"
+        />
+
+    <Button
+        android:id="@+id/selectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner date"
+        android:layout_margin="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnValider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suivant"
+        />
+
+</LinearLayout>
