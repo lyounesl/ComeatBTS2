@@ -20,24 +20,26 @@ class MenuRepasActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
             }
-        val bouton : Button = findViewById(R.id.boutonParticipation)
+        val idUtilisateur = intent.getIntExtra("idUtilisateur", -1) // ← remonte cette ligne en haut
+
+        val bouton: Button = findViewById(R.id.boutonParticipation)
         bouton.setOnClickListener {
             val intent = Intent(this, RepasActivity::class.java)
-            startActivity( intent )
+            intent.putExtra("idUtilisateur", idUtilisateur) // ✅ transmet l'id
+            startActivity(intent)
         }
-        val boutonRetour : Button = findViewById(R.id.boutonRetour)
+
+        val boutonRetour: Button = findViewById(R.id.boutonRetour)
         boutonRetour.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity( intent )
+            startActivity(intent)
         }
 
-
-
-
-        val bouton2 : Button = findViewById(R.id.boutonRecherche)
+        val bouton2: Button = findViewById(R.id.boutonRecherche)
         bouton2.setOnClickListener {
             val intent = Intent(this, RechercheRepasActivity::class.java)
-            startActivity( intent )
+            intent.putExtra("idUtilisateur", idUtilisateur) // ✅ déjà correct
+            startActivity(intent)
         }
     }
 }

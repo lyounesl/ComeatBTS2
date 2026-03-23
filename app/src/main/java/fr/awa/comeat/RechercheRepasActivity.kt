@@ -24,6 +24,7 @@ class RechercheRepasActivity : AppCompatActivity() {
     private var libelleSpecialite: String = ""
     private var dateRepas: String = ""
 
+    private var idUtilisateur: String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,28 +76,30 @@ class RechercheRepasActivity : AppCompatActivity() {
         btnDate.setOnClickListener {
             val dateCourante = LocalDate.now()
             val annee = dateCourante.year
-            val mois = dateCourante.monthValue -1
+            val mois = dateCourante.monthValue - 1
             val jour = dateCourante.dayOfMonth
 
             val datePickerDialog = DatePickerDialog(
                 this,
                 { view, anneeSelect, moisSelect, jourSelect ->
-                    val dateSelecionnee = LocalDate.of(
+                    val dateSelectionnee = LocalDate.of(
                         anneeSelect,
                         moisSelect + 1,
                         jourSelect
                     )
 
-                    val formateur = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-                    val dateFormatee = dateSelecionnee.format(formateur)
+                    // ✅ On stocke la date au format ISO pour LocalDate.parse() plus tard
+                    dateRepas = dateSelectionnee.toString()  // format "2026-03-17"
 
-                    tvDate.text = dateFormatee
+                    // Affichage formaté pour l'utilisateur
+                    val formateur = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+                    tvDate.text = dateSelectionnee.format(formateur)
                 },
                 annee, mois, jour)
-                datePickerDialog.show()
-                }
+            datePickerDialog.show()
+        }
 
-
+        val idUtilisateur = intent.getIntExtra("idUtilisateur", -1)
 
         val btnValider: Button = findViewById(R.id.btnValider)
         btnValider.setOnClickListener {
@@ -104,6 +107,7 @@ class RechercheRepasActivity : AppCompatActivity() {
 
             intent.putExtra("specialite_repas", libelleSpecialite)
             intent.putExtra("date_repas",dateRepas.toString())
+            intent.putExtra("idUtilisateur", idUtilisateur)
 
             startActivity(intent)
         }

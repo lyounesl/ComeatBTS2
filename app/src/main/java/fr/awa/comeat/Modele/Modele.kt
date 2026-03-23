@@ -87,17 +87,17 @@ object Modele {
         Utilisateur( 10 , "SMITH" , "Negan" , "hegan.smith@gmail.com" , "azerty" ) ,
         Utilisateur( 11 , "PORTER" , "Eugène" , "eugene.porter@gmail.com" , "azerty" ) ,
         Utilisateur( 12 , "PELETIER" , "Carole" , "carole.peletier@gmail.com" , "azerty" ) ,
-        Utilisateur( 13 , "GREENE" , "Beth" , "beth.greene@gmail.com" , "azerty" )
+        Utilisateur( 13 , "GREENE" , "Beth" , "beth@gmail.com" , "azerty" )
     )
 
     private val repas: MutableList<Repas> = mutableListOf(
-        Repas( 1 , LocalDate.of( 2026 , 3 , 17 ) , 4 , specialites.get( 3 ) , utilisateurs.get( 1 )  ) ,
-        Repas( 2 , LocalDate.of( 2026 , 3 , 18 ) , 2 , specialites.get( 0 ) , utilisateurs.get( 0 )  ) ,
-        Repas( 3 , LocalDate.of( 2026 , 3 , 19 ) , 2 , specialites.get( 3 ) , utilisateurs.get( 3 )  ) ,
-        Repas( 4 , LocalDate.of( 2026 , 3 , 20 ) , 13 , specialites.get( 2 ) , utilisateurs.get( 2 )  ) ,
-        Repas( 5 , LocalDate.of( 2026 , 3 , 21 ) , 3 , specialites.get( 1 ) , utilisateurs.get( 1 )  ) ,
-        Repas( 6 , LocalDate.of( 2026 , 3 , 21 ) , 4 , specialites.get( 4 ) , utilisateurs.get( 4 )  ) ,
-        Repas( 7 , LocalDate.of( 2026 , 3 , 21 ) , 4 , specialites.get( 5 ) , utilisateurs.get( 1 )  )
+        Repas( 1 , LocalDate.of( 2026 , 4 , 15 ) , 4 , specialites.get( 3 ) , utilisateurs.get( 1 )  ) ,
+        Repas( 2 , LocalDate.of( 2026 , 4 , 16 ) , 2 , specialites.get( 0 ) , utilisateurs.get( 0 )  ) ,
+        Repas( 3 , LocalDate.of( 2026 , 4 , 17 ) , 2 , specialites.get( 3 ) , utilisateurs.get( 3 )  ) ,
+        Repas( 4 , LocalDate.of( 2026 , 4 , 18 ) , 13 , specialites.get( 2 ) , utilisateurs.get( 2 )  ) ,
+        Repas( 5 , LocalDate.of( 2026 , 4 , 20 ) , 3 , specialites.get( 1 ) , utilisateurs.get( 1 )  ) ,
+        Repas( 6 , LocalDate.of( 2026 , 4 , 20 ) , 4 , specialites.get( 4 ) , utilisateurs.get( 4 )  ) ,
+        Repas( 7 , LocalDate.of( 2026 , 4 , 20 ) , 4 , specialites.get( 5 ) , utilisateurs.get( 1 )  )
     )
 
     init {
@@ -165,7 +165,7 @@ object Modele {
         val repasSelect: MutableList<Repas> = mutableListOf()
 
         for( unRepas in repas ){
-            if( unRepas.date == date && unRepas.specialite.libelle == specialite ){
+            if( unRepas.date.isEqual( date ) && unRepas.specialite.libelle.equals( specialite ) ){
                 if( unRepas.estHote( idUtilisateur ) == false && unRepas.estConvive( idUtilisateur ) == false ){
                     repasSelect.add( unRepas )
                 }
