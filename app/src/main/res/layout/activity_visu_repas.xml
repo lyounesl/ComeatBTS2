@@ -26,6 +26,35 @@
         android:layout_marginBottom="16dp"
         />
 
+    <TextView
+        android:id="@+id/tvRepasSpecialite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRepasDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvRepasHote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvRepasPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textSize="14sp" />
+
     <Button
         android:id="@+id/boutonParticiperAuRepas"
         android:layout_width="wrap_content"

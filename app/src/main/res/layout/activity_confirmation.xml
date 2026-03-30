@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top|center"
-    android:orientation="vertical"
-    tools:context=".ConfirmationActivity">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/boutonRetour"
@@ -15,13 +12,43 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|left"
         android:layout_margin="16dp"
-        android:text="@string/btn_retour"
-        />
+        android:text="@string/btn_retour" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirmation de l'inscription au repas" />
+        android:text="Confirmation de l'inscription au repas"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ✅ Affichage des infos du repas -->
+    <TextView
+        android:id="@+id/tvConfirmSpecialite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvConfirmDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvConfirmHote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textSize="14sp" />
+
+    <!-- ✅ Bouton de confirmation -->
+    <Button
+        android:id="@+id/boutonConfirmer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmer l'inscription" />
 
 </LinearLayout>
