@@ -9,13 +9,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import fr.awa.comeat.Modele.Modele        // ← import du Modele
-import fr.awa.comeat.Modele.Utilisateur   // ← import de la classe Utilisateur
+import fr.awa.comeat.Modele.Modele
+import fr.awa.comeat.Modele.Utilisateur
 
 
 class MainActivity : AppCompatActivity() {
 
-    private var utilisateurConnecte: Utilisateur? = null  // ← stocke l'utilisateur connecté
+    private var utilisateurConnecte: Utilisateur? = null  // stockage de l'utilisateur connecté
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             // ← fonction de vérification
             if (verifierConnexion(email, mdp)) {
                 val intent = Intent(this, MenuRepasActivity::class.java)
-                // ← on passe l'id de l'utilisateur à l'activité suivante
+                // passe l'id de l'utilisateur à l'activité suivante
                 intent.putExtra("idUtilisateur", utilisateurConnecte!!.id)
                 startActivity(intent)
             }

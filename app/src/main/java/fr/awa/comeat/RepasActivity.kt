@@ -22,11 +22,11 @@ class RepasActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val idRepas = intent.getIntExtra("idRepas", -1)
+
         val boutonRetour : Button = findViewById(R.id.boutonRetour)
-        boutonRetour.setOnClickListener {
-            val intent = Intent(this, MenuRepasActivity::class.java)
-            startActivity( intent )
-        }
+        boutonRetour.setOnClickListener { finish() }
 
         val rvRepas = findViewById<RecyclerView>(R.id.rvRepas)
         rvRepas.layoutManager = LinearLayoutManager( this)

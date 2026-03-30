@@ -45,12 +45,7 @@ class ConfirmationActivity : AppCompatActivity() {
 
         // Bouton retour
         val boutonRetour: Button = findViewById(R.id.boutonRetour)
-        boutonRetour.setOnClickListener {
-            val intent = Intent(this, VisuRepasActivity::class.java)
-            intent.putExtra("idRepas", idRepas)
-            intent.putExtra("idUtilisateur", idUtilisateur)
-            startActivity(intent)
-        }
+        boutonRetour.setOnClickListener { finish() }
 
         // Bouton confirmer l'inscription
         val boutonConfirmer: Button = findViewById(R.id.boutonConfirmer)

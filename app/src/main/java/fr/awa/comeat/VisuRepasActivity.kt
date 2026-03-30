@@ -43,10 +43,7 @@ class VisuRepasActivity : AppCompatActivity() {
         }
 
         val boutonRetour: Button = findViewById(R.id.boutonRetour)
-        boutonRetour.setOnClickListener {
-            val intent = Intent(this, ListeRepasActivity::class.java)
-            startActivity(intent)
-        }
+        boutonRetour.setOnClickListener { finish () }
 
         val bouton: Button = findViewById(R.id.boutonParticiperAuRepas)
         bouton.setOnClickListener {

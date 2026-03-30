@@ -37,10 +37,7 @@ class RechercheRepasActivity : AppCompatActivity() {
             insets
         }
         val boutonRetour: Button = findViewById(R.id.boutonRetour)
-        boutonRetour.setOnClickListener {
-            val intent = Intent(this, MenuRepasActivity::class.java)
-            startActivity(intent)
-        }
+        boutonRetour.setOnClickListener { finish() }
 
 
         // Spinner de la selection de spécialité
@@ -100,6 +97,7 @@ class RechercheRepasActivity : AppCompatActivity() {
         }
 
         val idUtilisateur = intent.getIntExtra("idUtilisateur", -1)
+        val idRepas = intent.getIntExtra("idRepas", -1)
 
         val btnValider: Button = findViewById(R.id.btnValider)
         btnValider.setOnClickListener {
@@ -108,6 +106,7 @@ class RechercheRepasActivity : AppCompatActivity() {
             intent.putExtra("specialite_repas", libelleSpecialite)
             intent.putExtra("date_repas",dateRepas.toString())
             intent.putExtra("idUtilisateur", idUtilisateur)
+            intent.putExtra("idRepas", idRepas)
 
             startActivity(intent)
         }

@@ -100,6 +100,7 @@ object Modele {
         Repas( 7 , LocalDate.of( 2026 , 4 , 20 ) , 4 , specialites.get( 5 ) , utilisateurs.get( 1 )  )
     )
 
+
     init {
 
         repas.get(0).inscrire( utilisateurs.get( 12 ) )

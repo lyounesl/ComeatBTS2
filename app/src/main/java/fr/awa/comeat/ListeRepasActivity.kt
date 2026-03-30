@@ -25,14 +25,12 @@ class ListeRepasActivity : AppCompatActivity() {
             insets
         }
         val boutonRetour : Button = findViewById(R.id.boutonRetour)
-        boutonRetour.setOnClickListener {
-            val intent = Intent(this, RechercheRepasActivity::class.java)
-            startActivity( intent )
-        }
+        boutonRetour.setOnClickListener { finish() }
 
         val specialiteRepas = intent.getStringExtra("specialite_repas") ?: ""
         val dateRepas = intent.getStringExtra("date_repas")?.let { LocalDate.parse(it) }
         val idUtilisateur = intent.getIntExtra("idUtilisateur", -1)
+        val idRepas = intent.getIntExtra("idRepas", -1)
 
         // Affichage de la spécialité et de la date dans des TextView
         val tvSpecialite: TextView = findViewById(R.id.tvSpecialite)
